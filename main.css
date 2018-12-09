@@ -1,0 +1,35 @@
+body {
+    margin: 40px;
+    padding: 40px;
+}
+
+div.header {
+    text-align: center;
+}
+
+button {
+    margin: 0 auto;
+}
+
+ul li {
+    margin: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+ul li:hover {
+    cursor: pointer;
+}
+
+.strikeout {
+    text-decoration: line-through;
+    color: #B8C2CC;
+}
+
+.strikeout:hover {
+    color: #8795A1;
+}
+
+.priority {
+    color: #DE751F;
+}
