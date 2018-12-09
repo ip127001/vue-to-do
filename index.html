@@ -31,14 +31,19 @@
                 <ul>
                     <li v-for="item in reversedItems" @click="togglePurchase(item)">
                         <label class="checkbox-inline" :class="{strikeout: item.completed}">
-                            <input type="checkbox" value="">{{item.taskName}} = {{item.taskInfo}} {{ item.date }}
+                            <input type="checkbox" value=""><b>{{item.taskName}}</b> = {{item.taskInfo}} {{item.date}}
                         </label>
                     </li>
                 </ul>
             </div>
         </div>
 
-        <p v-if="items.length === 0">Nice job! rohit</p>
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 col-lg-offset-4">
+                <h4 v-if="items.length === 0">List is empty!! Please add tasks to the list</h4>
+            </div>
+        </div>
+
     </div>
 
 
@@ -51,12 +56,7 @@
             data: {
                 state: 'default',
                 header: null,
-                items: [{
-                    taskName: 'milk',
-                    taskInfo: 'buy from market',
-                    date: '17/06/1996',
-                    completed: false
-                }]
+                items: []
             },
             computed: {
                 reversedItems() {
@@ -71,9 +71,9 @@
                         date: this.date,
                         completed: false
                     });
-                    this.taskInfo = '';
-                    this.taskName = '';
-                    this.date = '';
+                    this.newTask = "";
+                    this.description = "";
+                    this.date = "";
                 },
                 changeState: function (newState) {
                     this.state = newState;
